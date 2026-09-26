@@ -1,0 +1,48 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "redis-streams-audit"
+version = "0.1.0"
+description = "Audits Redis Streams consumer groups for PEL growth, dead consumers, poison messages, XTRIM-orphaned entries, and lag"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+authors = [{name = "__AUTHOR__"}]
+keywords = ["redis", "redis-streams", "consumer-group", "pel", "observability", "audit"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Database",
+    "Topic :: System :: Monitoring",
+    "Typing :: Typed",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8",
+    "mypy>=1.11",
+    "redis>=5",
+]
+
+[project.urls]
+Repository = "https://github.com/__GH_OWNER__/redis-streams-audit"
+
+[project.scripts]
+redis-streams-audit = "redis_streams_audit.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/redis_streams_audit"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.mypy]
+strict = true
