@@ -9,7 +9,7 @@ description = "Audits Redis Streams consumer groups for PEL growth, dead consume
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.11"
-authors = [{name = "__AUTHOR__"}]
+authors = [{name = "redis-streams-audit"}]
 keywords = ["redis", "redis-streams", "consumer-group", "pel", "observability", "audit"]
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -33,7 +33,7 @@ dev = [
 ]
 
 [project.urls]
-Repository = "https://github.com/__GH_OWNER__/redis-streams-audit"
+Repository = "https://github.com/agentscope-ai-java/redis-streams-audit"
 
 [project.scripts]
 redis-streams-audit = "redis_streams_audit.cli:main"
